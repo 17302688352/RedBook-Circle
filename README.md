@@ -10,8 +10,7 @@ taro-vue3-pinia 是一个使用 Taro3 + Vue3 + TypeScript + NutUi + pinia + unoc
 
 ## 代码仓库
 
-- [github](https://github.com/yanbowe/taro-vue3-pinia)
-- [gitee](https://gitee.com/zhongjiancrm/taro-vue3-pinia)
+- [github](https://github.com/17302688352/RedBook-Circle)
 
 ## Vscode 插件安装
 
