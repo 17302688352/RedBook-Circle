@@ -11,12 +11,12 @@ const tabBar = {
     {
       pagePath: '/pages/index/index',
       text: 'AI创作',
-      icon: 'i-local-wind'
+      icon: 'i-basil:adobe-illustrator-outline'
     },
     {
       pagePath: '/pages/my/index',
       text: '个人中心',
-      icon: 'i-local-custom-icon'
+      icon: 'i-line-md:account'
     }
   ]
 };
@@ -44,7 +44,8 @@ export default {
     <nut-tabbar :model-value="activeTab" bottom safe-area-inset-bottom @tab-switch="tabSwitch">
       <nut-tabbar-item v-for="item in tabBar.list" :key="item.pagePath" :name="item.pagePath" :tab-title="item.text">
         <template #icon>
-          <div class="text-25px" :class="item.icon" />
+          <div v-if="item.text === 'AI创作'" class="text-30px i-basil:adobe-illustrator-outline" :class="item.icon" />
+          <div v-if="item.text === '个人中心'" class="text-30px i-line-md:account" :class="item.icon" />
         </template>
       </nut-tabbar-item>
     </nut-tabbar>

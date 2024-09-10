@@ -14,7 +14,7 @@ const height = statusBarHeight + navBarHeight;
 <template>
   <!-- 占位div -->
   <div class="w-full" :style="{ height: pxTransform(height) }"></div>
-  <div :style="{ paddingTop: pxTransform(statusBarHeight) }" class="w-full fixed-lt z-10 bg-#fff">
+  <div :style="{ paddingTop: pxTransform(statusBarHeight) }" class="tarBar-container w-full fixed-lt z-10 bg-#fff">
     <nut-navbar class="custom-navbar" v-bind="$attrs" @on-click-back="navigateBack()">
       <template #left-show>
         <div class="i-ph-caret-left-bold text-22px text-#000"></div>
@@ -26,10 +26,17 @@ const height = statusBarHeight + navBarHeight;
   </div>
 </template>
 <style lang="scss">
+.tarBar-container {
+  background-color: #f72741;
+}
 .custom-navbar {
   .nut-navbar {
     margin-bottom: 0;
     box-shadow: 0px 1px 1px rgba(237, 238, 241, 1);
+    background-color: #f72741;
   }
+}
+.nut-navbar__title .title {
+  color: #fff;
 }
 </style>
