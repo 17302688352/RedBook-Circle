@@ -21,7 +21,7 @@ export default defineAppConfig({
     list: [
       {
         pagePath: 'pages/index/index',
-        text: '首页'
+        text: 'AI创作'
       },
       {
         pagePath: 'pages/my/index',

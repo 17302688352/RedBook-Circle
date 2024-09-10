@@ -45,13 +45,13 @@ function handleThemeColor() {
 
 /** 设置页面属性 */
 definePageConfig({
-  navigationBarTitleText: '首页'
+  navigationBarTitleText: 'AI创作'
 });
 </script>
 
 <template>
   <basic-layout show-tab-bar>
-    <custom-navbar title="首页" />
+    <custom-navbar title="AI创作" class="header" />
     <nut-cell title="基础弹框" @click="baseClick"></nut-cell>
     <nut-cell title="分包A" @click="handleToA"></nut-cell>
     <nut-cell title="分包B" @click="handleToB"></nut-cell>
@@ -64,3 +64,10 @@ definePageConfig({
     </nut-cell>
   </basic-layout>
 </template>
+<style lang="less" scoped>
+.header {
+  .custom-navbar .nut-navbar {
+    background-color: #f72741;
+  }
+}
+</style>

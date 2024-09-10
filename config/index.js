@@ -75,11 +75,21 @@ const config = {
     },
     // 合并webpack配置
     webpackChain(chain) {
+      // 1. 开启文件系统缓存
+      chain.cache({
+        type: 'filesystem',
+        buildDependencies: {
+          config: [__filename]
+        }
+      });
+
+      // 3. 按需加载组件
       chain.plugin('unocss').use(UnoCSS());
       chain.plugin('unplugin-vue-components').use(
         ComponentsPlugin({
           dts: 'src/typings/components.d.ts',
-          resolvers: [NutUIResolver()]
+          resolvers: [NutUIResolver()],
+          directoryAsNamespace: true
         })
       );
     }
@@ -109,11 +119,21 @@ const config = {
     },
     // 合并webpack配置
     webpackChain(chain) {
+      // 1. 开启文件系统缓存
+      chain.cache({
+        type: 'filesystem',
+        buildDependencies: {
+          config: [__filename]
+        }
+      });
+
+      // 3. 按需加载组件
       chain.plugin('unocss').use(UnoCSS());
       chain.plugin('unplugin-vue-components').use(
         ComponentsPlugin({
           dts: 'src/typings/components.d.ts',
-          resolvers: [NutUIResolver()]
+          resolvers: [NutUIResolver()],
+          directoryAsNamespace: true
         })
       );
     },

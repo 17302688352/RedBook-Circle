@@ -10,7 +10,7 @@ const tabBar = {
   list: [
     {
       pagePath: '/pages/index/index',
-      text: '首页',
+      text: 'AI创作',
       icon: 'i-local-wind'
     },
     {
