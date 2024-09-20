@@ -21,6 +21,7 @@ module.exports = {
       }
     ],
     'vue/valid-define-options': 'warn',
+    'vue/multi-word-component-names': 'off',
     'no-return-await': 'off',
     'import/order': [
       'error',
