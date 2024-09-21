@@ -1,12 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import Taro from '@tarojs/taro';
+import { request } from '@/service/request/index';
 
 const currentTab = ref(0);
-
+const params = Taro.getCurrentInstance().router?.params;
+function response() {
+  request.post('/red/chrome', params, {});
+}
 // 切换标签的函数
 const switchTab = (index: number) => {
   currentTab.value = index;
 };
+onMounted(() => {
+  response();
+});
 </script>
 
 <template>
