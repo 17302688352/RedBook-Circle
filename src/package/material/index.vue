@@ -6,7 +6,7 @@ import { request } from '@/service/request/index';
 const currentTab = ref(0);
 const params = Taro.getCurrentInstance().router?.params;
 function response() {
-  request.post('/red/chrome', params, {});
+  request.post('/red/context', params, {});
 }
 // 切换标签的函数
 const switchTab = (index: number) => {
