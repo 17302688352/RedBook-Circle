@@ -20,7 +20,7 @@ function getMaterial() {
     });
     return;
   }
-  navigateTo({ url: `/package/material/index?url=${encodeURIComponent(inputValue.value)}` });
+  navigateTo({ url: `/package/material/index?url=${inputValue.value}` });
 }
 </script>
 

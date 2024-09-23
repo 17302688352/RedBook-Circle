@@ -19,9 +19,9 @@ export function getRequestUrl(url: string) {
       () => {
         const { miniProgram } = getAccountInfoSync();
         const hosts = {
-          develop: 'http://8.134.205.36:8000', // 开发
-          trial: 'http://8.134.205.36:8000', // 体验
-          release: 'http://8.134.205.36:8000' // 正式
+          develop: 'http://10.130.24.142:8000', // 开发
+          trial: 'http://10.130.24.142:8000', // 体验
+          release: 'http://10.130.24.142:8000' // 正式
         };
         baseUrl = url.substring(0, 1) === '/' ? `${hosts[miniProgram.envVersion]}${url}` : `${url}`;
       }

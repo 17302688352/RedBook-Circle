@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     NODE_ENV: '"production"',
-    HTTP_URL: '"https://getman.cn/mock"'
+    HTTP_URL: '"http://10.130.24.142:8000"'
   },
   defineConstants: {},
   mini: {},

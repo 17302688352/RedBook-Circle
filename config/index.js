@@ -98,6 +98,7 @@ const config = {
     publicPath: '/',
     staticDirectory: 'static',
     esnextModules: ['nutui-taro'],
+    // compiler: { type: 'webpack5', prebundle: { enable: false } },
     postcss: {
       pxtransform: {
         enable: true,
@@ -140,7 +141,7 @@ const config = {
     devServer: {
       proxy: {
         '/api': {
-          target: 'https://getman.cn/mock',
+          target: 'http://10.130.24.142:8000',
           changeOrigin: true,
           pathRewrite: {
             '^/api': ''

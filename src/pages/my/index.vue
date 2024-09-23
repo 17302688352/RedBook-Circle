@@ -5,8 +5,7 @@ definePageConfig({
 </script>
 <template>
   <basic-layout show-tab-bar>
-    <custom-navbar title="个人中心" />
-    <div class="w-375px text-30px text-primary">个人中心</div>
+    <!-- <custom-navbar title="个人中心" /> -->
   </basic-layout>
 </template>
 
