@@ -102,6 +102,11 @@ const config = {
     staticDirectory: 'static',
     esnextModules: ['nutui-taro'],
     // compiler: { type: 'webpack5', prebundle: { enable: false } },
+    output: {
+      environment: {
+        asyncFunction: true
+      }
+    },
     postcss: {
       pxtransform: {
         enable: true,
