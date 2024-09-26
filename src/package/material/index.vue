@@ -17,20 +17,25 @@ interface InfoData {
   mp4List: Array<string>;
 }
 
-const params = Taro.getCurrentInstance().router?.params;
+// URL 获取并解码
+const url = Taro.getCurrentInstance().router?.params.url;
+let params = '';
+if (url) {
+  params = decodeURIComponent(url); // 解码
+}
 
 // 请求数据
 async function response() {
-  const res = await getInfo(params);
+  const res = await getInfo({
+    url: params?.toString()
+  });
   if (res.success) {
     data.value = res.success;
   }
-  console.log('响应数据:', data.value);
 }
 
-// 切换标签的函数
+// 切换标签页
 const switchTab = (index: number) => {
-  console.log(index);
   currentTab.value = index;
 };
 

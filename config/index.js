@@ -92,6 +92,9 @@ const config = {
           directoryAsNamespace: true
         })
       );
+      chain.performance.hints(false);
+      chain.performance.maxEntrypointSize(Infinity);
+      chain.performance.maxAssetSize(Infinity);
     }
   },
   h5: {

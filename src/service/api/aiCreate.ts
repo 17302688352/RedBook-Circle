@@ -3,6 +3,7 @@ import { request } from '../request';
 
 interface res {
   title: string;
+  description: string;
   masterImgList: Array<string>;
   mp4List: Array<string>;
 }

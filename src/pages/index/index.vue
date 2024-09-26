@@ -20,7 +20,8 @@ function getMaterial() {
     });
     return;
   }
-  navigateTo({ url: `/package/material/index?url=${inputValue.value}` });
+  const encodedUrl = encodeURIComponent(inputValue.value);
+  navigateTo({ url: `/package/material/index?url=${encodedUrl}` });
 }
 </script>
 
