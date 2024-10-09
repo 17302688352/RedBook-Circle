@@ -149,7 +149,7 @@ const config = {
     devServer: {
       proxy: {
         '/api': {
-          target: 'http://10.130.24.142:8000',
+          target: 'http://www.redai.asia:8000',
           changeOrigin: true,
           pathRewrite: {
             '^/api': ''
