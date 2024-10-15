@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { navigateTo, showToast } from '@tarojs/taro';
 
 const inputValue = ref('');
@@ -9,6 +9,8 @@ const clearInput = () => {
   inputValue.value = '';
 };
 
+const isLive = ref('0');
+const dialogShow = ref(false);
 // 获取素材并跳转方法
 function getMaterial() {
   if (!inputValue.value) {
@@ -20,9 +22,25 @@ function getMaterial() {
     });
     return;
   }
-  const encodedUrl = encodeURIComponent(inputValue.value);
-  navigateTo({ url: `/package/material/index?url=${encodedUrl}` });
+  dialogShow.value = true;
 }
+const onOk = () => {
+  const encodedUrl = encodeURIComponent(inputValue.value);
+  if (isLive.value === '0') {
+    navigateTo({ url: `/package/material/index?url=${encodedUrl}` });
+  } else {
+    navigateTo({ url: `/package/material/index?url=${encodedUrl}&isLive=true` });
+  }
+  dialogShow.value = false;
+};
+watch(
+  () => dialogShow.value,
+  val => {
+    if (!val) {
+      isLive.value = '0';
+    }
+  }
+);
 </script>
 
 <template>
@@ -31,6 +49,12 @@ function getMaterial() {
     <nut-textarea v-model="inputValue" type="text" placeholder="请粘贴链接" class="rounded-input" />
 
     <!-- 按钮容器 -->
+    <nut-dialog v-model:visible="dialogShow" title="是否live图" @ok="onOk">
+      <nut-radio-group v-model="isLive" direction="horizontal" class="commitRadio">
+        <nut-radio label="0">否</nut-radio>
+        <nut-radio label="1">是</nut-radio>
+      </nut-radio-group>
+    </nut-dialog>
     <div class="button-container">
       <nut-button type="primary" class="btn-clear" @click="clearInput">清空文本</nut-button>
       <nut-button type="success" class="btn-material" @click="getMaterial">获取素材</nut-button>
@@ -56,6 +80,7 @@ function getMaterial() {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .button-container {

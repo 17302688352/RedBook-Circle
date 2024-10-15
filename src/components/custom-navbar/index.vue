@@ -28,6 +28,7 @@ const height = statusBarHeight + navBarHeight;
 <style lang="scss">
 .tarBar-container {
   background-color: #ff2442;
+  z-index: 9999 !important;
 }
 .custom-navbar {
   .nut-navbar {
