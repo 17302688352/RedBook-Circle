@@ -19,9 +19,9 @@ export function getRequestUrl(url: string) {
       () => {
         const { miniProgram } = getAccountInfoSync();
         const hosts = {
-          develop: 'http://www.redai.asia:8000', // 开发
-          trial: 'http://www.redai.asia:8000', // 体验
-          release: 'http://www.redai.asia:8000' // 正式
+          develop: 'https://www.redai.asia', // 开发
+          trial: 'https://www.redai.asia', // 体验
+          release: 'https://www.redai.asia' // 正式
         };
         baseUrl = url.substring(0, 1) === '/' ? `${hosts[miniProgram.envVersion]}${url}` : `${url}`;
       }

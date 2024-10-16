@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     NODE_ENV: '"production"',
-    HTTP_URL: '"http://www.redai.asia:8000"'
+    HTTP_URL: '"https://www.redai.asia"'
   },
   defineConstants: {},
   mini: {},
